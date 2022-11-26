@@ -1,0 +1,49 @@
+{
+  "name": "a-equal-b",
+  "displayName": "A=B",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:A=B"
+  ],
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "A=B",
+        "extensions": [
+          ".ab"
+        ],
+        "configuration": "./config/a-equal-b.language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "A=B",
+        "scopeName": "source.a-equal-b",
+        "path": "./config/a-equal-b.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "@types/vscode": "^1.73.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0",
+    "vscode-languageserver": "^7.0.0",
+    "vscode-languageserver-textdocument": "^1.0.4"
+  }
+}

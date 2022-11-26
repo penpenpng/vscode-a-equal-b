@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "scopeName": "source.a-equal-b",
+  "fileTypes": [".ab"],
+  "patterns": [
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#equal"
+    },
+    {
+      "patterns": [
+        {
+          "name": "invalid",
+          "match": "(\\(|\\))"
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control",
+          "match": "\\((start|end|once|return)\\)"
+        }
+      ]
+    },
+    "equal": {
+      "patterns": [
+        {
+          "name": "keyword.operator",
+          "match": "="
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign",
+          "match": "#.*"
+        }
+      ]
+    }
+  }
+}
